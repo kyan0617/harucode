@@ -1,0 +1,23 @@
+$mq-breakpoints: (
+  'xs': 321px,
+  'sm': 540px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  // 'xxl': 1920px,
+) !default;
+@mixin mq($breakpoint: md, $rule: min) {
+  $breakpoint: map-get($mq-breakpoints, $breakpoint);
+  @if $rule == max {
+    $breakpoint: $breakpoint - 1px;
+  }
+  @media screen and (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover:hover) {
+    @content;
+  }
+}

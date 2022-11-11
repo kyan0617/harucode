@@ -1,0 +1,92 @@
+@use 'global' as g;
+
+.l-footer {
+  background-color: g.$c-main;
+
+  &__inner {
+    width: 100%;
+    padding: 1.4rem 1.6rem;
+  }
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__copy-text {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  &__sns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__item {
+    &:last-of-type {
+      margin-left: 1.6rem;
+    }
+  }
+  &__link {
+    display: block;
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  &__icon-img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include g.hover {
+    &__link:hover {
+      animation:shake 0.4s ease;
+    }
+  }
+
+  @include g.mq(sm) {
+    &__inner {
+      padding: 2.3rem 3.2rem;
+    }
+    &__item {
+      &:last-of-type {
+        margin-left: 2rem;
+      }
+    }
+    &__icon {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+
+  @include g.mq(md) {
+    &__inner {
+      max-width: 134rem;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.2rem 2rem;
+    }
+    &__item {
+      &:last-of-type {
+        margin-left: 2.4rem;
+      }
+    }
+    &__icon {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+// SNSアイコン：ホバーアニメーション
+@keyframes shake {
+  0%   { transform:rotate(0); }
+  16%  { transform:rotate(12deg); }
+  32%  { transform:rotate(-10deg); }
+  48%  { transform:rotate(8deg); }
+  64%  { transform:rotate(-6deg); }
+  80%  { transform:rotate(4deg); }
+  96%  { transform:rotate(-2deg); }
+  100% { transform:rotate(0deg); }
+}

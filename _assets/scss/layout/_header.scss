@@ -1,0 +1,36 @@
+@use 'global' as g;
+
+.l-header {
+  &__inner {
+    width: 100%;
+    background-color: g.$c-main;
+  }
+  &__link {
+    display: block;
+    padding: 1.4rem 0;
+  }
+  &__title {
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+  }
+
+  @include g.mq(sm) {
+    &__link {
+      padding: 2.2rem 0;
+    }
+    &__title {
+      font-size: 3.5rem;
+    }
+  }
+  @include g.mq(md) {
+    &__link {
+      padding: 3rem 0;
+    }
+    &__title {
+      font-size: 4.2rem;
+    }
+  }
+}

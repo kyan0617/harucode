@@ -1,0 +1,39 @@
+@use 'global' as g;
+
+/*----------------------
+  ベースのスタイル
+-----------------------*/
+html {
+  /* widthに合わせて数値変更 */
+  font-size: 10px;
+
+  @include g.mq(sm) {
+    font-size: calc(10 / 1300 * 100vw);
+  }
+
+  /* widthに合わせて数値変更 */
+  @media screen and (min-width: 1300px) {
+    font-size: 10px;
+  }
+}
+body {
+  font-family: g.$base-font;
+  color: g.$c-text;
+  font-size: 1.4rem;
+}
+a {
+  color: g.$c-text;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+main {
+	flex: 1;
+	overflow-x: hidden;
+}

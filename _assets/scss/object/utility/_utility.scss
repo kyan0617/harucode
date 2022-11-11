@@ -1,0 +1,14 @@
+@use '../../global' as g;
+
+// pc時非表示
+.u-dn-md-min {
+  @include g.mq {
+    display: none;
+  }
+}
+// sp時非表示
+.u-dn-md-max {
+  @include g.mq(md, max) {
+    display: none;
+  }
+}
