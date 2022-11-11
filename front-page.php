@@ -6,7 +6,10 @@
   <!-- <p-top> -->
   <section class="p-top">
     <div class="p-top__inner">
+
+      <!-- <記事リスト> -->
       <ul class="p-top__list">
+        <!-- <記事ループ> -->
         <?php
         $args = array(
           'post_type' => 'post',
@@ -17,8 +20,11 @@
           foreach ($posts as $post) {
             setup_postdata($post);
         ?>
+
+        <!-- <記事ループアイテム> -->
         <li class="p-top__item">
           <a href="<?php the_permalink(); ?>" class="p-top__link">
+            <!-- <記事アイキャッチ> -->
             <div class="p-top__img">
               <?php if (has_post_thumbnail()) { ?>
               <?php the_post_thumbnail('full'); ?>
@@ -27,24 +33,26 @@
                 alt="haru code">
               <?php } ?>
             </div>
+            <!-- <記事タグ> -->
             <div class="p-top__tag">
               <p class="p-top__tag-text">
                 <?php the_category(); ?>
               </p>
             </div>
+            <!-- <記事タイトル> -->
             <div class="p-top__title">
               <h2 class="p-top__tag-text">
                 <?php the_title(); ?>
               </h2>
             </div>
           </a>
-        </li>
+        </li><!-- </記事ループアイテム> -->
         <?php
           }
         }
         wp_reset_postdata();
         ?>
-      </ul>
+      </ul><!-- </記事リスト> -->
     </div>
   </section><!-- </p-top> -->
 
