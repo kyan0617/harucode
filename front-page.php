@@ -36,12 +36,15 @@
             <!-- <記事タグ> -->
             <div class="p-top__tag">
               <p class="p-top__tag-text">
-                <?php the_category(); ?>
+                <?php $cat = get_the_category();
+                    $cat = $cat[0]; {
+                      echo $cat->cat_name;
+                    } ?>
               </p>
             </div>
             <!-- <記事タイトル> -->
             <div class="p-top__title">
-              <h2 class="p-top__tag-text">
+              <h2 class="p-top__title-text">
                 <?php the_title(); ?>
               </h2>
             </div>
@@ -53,6 +56,24 @@
         wp_reset_postdata();
         ?>
       </ul><!-- </記事リスト> -->
+
+      <div class="p-archive-main__pagination">
+        <?php
+        if ($the_query->max_num_pages > 1) {
+          echo paginate_links(array(
+            'base' => get_pagenum_link(1) . '%_%',
+            'format' => 'page/%#%/',
+            'type' => 'list',
+            'prev_text' => '',
+            'next_text' => '',
+            'current' => max(1, $paged),
+            'mid_size' => 1,
+            'total' => $the_query->max_num_pages
+          ));
+        }
+        wp_reset_postdata();
+        ?>
+      </div>
     </div>
   </section><!-- </p-top> -->
 

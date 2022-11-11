@@ -632,6 +632,7 @@ main {
   text-align: center;
   text-transform: uppercase;
   font-size: 2.8rem;
+  font-family: "Questrial", sans-serif;
 }
 @media screen and (min-width: 540px) {
   .l-header__link {
@@ -648,6 +649,61 @@ main {
   .l-header__title {
     font-size: 4.2rem;
   }
+}
+
+.p-top {
+  background-color: #FAEDF0;
+}
+.p-top__inner {
+  padding: 4rem 1.6rem 9.2rem;
+}
+.p-top__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem 4rem;
+}
+.p-top__link {
+  display: block;
+  width: 100%;
+}
+.p-top__img {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.6rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.4);
+}
+.p-top__img::before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+}
+.p-top__img img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-top__tag {
+  display: inline-block;
+  min-width: 10.4rem;
+  background-color: #EC255A;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+.p-top__tag-text {
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+.p-top__title-text {
+  font-size: 1.6rem;
+  color: #333;
 }
 
 @media screen and (min-width: 768px) {
